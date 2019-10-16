@@ -1,0 +1,16 @@
+﻿@page
+@using Microsoft.EntityFrameworkCore
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    @foreach (var item in Model.items)
+    {
+        <p>@item.Data.Name</p>
+        <p>@item.Data.Surname</p>
+        <p>@item.Data.Title</p>
+    }
+</div>
