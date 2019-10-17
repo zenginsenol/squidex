@@ -36,13 +36,14 @@ namespace senolzengin.Pages
             public string University { get; set; }
             public string Title { get; set; }
             public string Departman { get; set; }
+            public string Location { get; set; }
         }
 
         public async Task OnGet()
         {
             var manager = SquidexClientManager.FromOption(_configuration.ToSquidexOptions());
             var client = manager.GetClient<Item, _Item>("information");
-            var result = await client.GetAsync(context: SquidexParser.DefaultContext("en"));
+            var result = await client.GetAsync(context: SquidexParser.DefaultContext("tr"));
             var res = result.Items.ToArray().FirstOrDefault();
             items = res;
         }

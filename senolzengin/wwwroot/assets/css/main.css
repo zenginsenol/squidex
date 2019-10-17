@@ -483,9 +483,9 @@ a.back-to-top:hover, a.back-to-top:focus {
   top: 0px;
 }
 
-.top-nav-collapse .navbar-brand img {
-  width: 65%;
-}
+/*.top-nav-collapse .navbar-brand img {*/
+/*  width: 65%;*/
+/*}*/
 
 .top-nav-collapse .navbar-nav .nav-link {
   color: #333 !important;
