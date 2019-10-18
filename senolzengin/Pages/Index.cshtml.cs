@@ -35,8 +35,11 @@ namespace senolzengin.Pages
             public string HighSchool { get; set; }
             public string University { get; set; }
             public string Title { get; set; }
-            public string Departman { get; set; }
+            public string Department { get; set; }
             public string Location { get; set; }
+            public string Experience { get; set; }
+            public string Age { get; set; }
+            public string Country { get; set; }
         }
 
         public async Task OnGet()
