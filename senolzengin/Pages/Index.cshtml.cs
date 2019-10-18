@@ -40,6 +40,7 @@ namespace senolzengin.Pages
             public string Experience { get; set; }
             public string Age { get; set; }
             public string Country { get; set; }
+            public string Summary { get; set; }
         }
 
         public async Task OnGet()

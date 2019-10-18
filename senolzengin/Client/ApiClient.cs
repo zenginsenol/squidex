@@ -114,8 +114,7 @@ namespace IO.Swagger.Client
         /// </summary>
         /// <param name="str">String to be escaped.</param>
         /// <returns>Escaped string.</returns>
-      
-    
+     
         /// <summary>
         /// Create FileParameter based on Stream.
         /// </summary>

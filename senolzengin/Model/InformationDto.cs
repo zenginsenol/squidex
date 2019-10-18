@@ -62,11 +62,46 @@ namespace IO.Swagger.Model {
     public InformationTitleProperty Title { get; set; }
 
     /// <summary>
-    /// Gets or Sets Departman
+    /// Gets or Sets Location
     /// </summary>
-    [DataMember(Name="Departman", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "Departman")]
-    public InformationDepartmanProperty Departman { get; set; }
+    [DataMember(Name="Location", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "Location")]
+    public InformationLocationProperty Location { get; set; }
+
+    /// <summary>
+    /// Gets or Sets Age
+    /// </summary>
+    [DataMember(Name="Age", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "Age")]
+    public InformationAgeProperty Age { get; set; }
+
+    /// <summary>
+    /// Gets or Sets Experience
+    /// </summary>
+    [DataMember(Name="Experience", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "Experience")]
+    public InformationExperienceProperty Experience { get; set; }
+
+    /// <summary>
+    /// Gets or Sets Department
+    /// </summary>
+    [DataMember(Name="Department", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "Department")]
+    public InformationDepartmentProperty Department { get; set; }
+
+    /// <summary>
+    /// Gets or Sets Country
+    /// </summary>
+    [DataMember(Name="Country", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "Country")]
+    public InformationCountryProperty Country { get; set; }
+
+    /// <summary>
+    /// Gets or Sets Summary
+    /// </summary>
+    [DataMember(Name="Summary", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "Summary")]
+    public InformationSummaryProperty Summary { get; set; }
 
 
     /// <summary>
@@ -83,7 +118,12 @@ namespace IO.Swagger.Model {
       sb.Append("  HighSchool: ").Append(HighSchool).Append("\n");
       sb.Append("  University: ").Append(University).Append("\n");
       sb.Append("  Title: ").Append(Title).Append("\n");
-      sb.Append("  Departman: ").Append(Departman).Append("\n");
+      sb.Append("  Location: ").Append(Location).Append("\n");
+      sb.Append("  Age: ").Append(Age).Append("\n");
+      sb.Append("  Experience: ").Append(Experience).Append("\n");
+      sb.Append("  Department: ").Append(Department).Append("\n");
+      sb.Append("  Country: ").Append(Country).Append("\n");
+      sb.Append("  Summary: ").Append(Summary).Append("\n");
       sb.Append("}\n");
       return sb.ToString();
     }

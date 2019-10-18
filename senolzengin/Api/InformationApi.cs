@@ -23,7 +23,11 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="body">The data of the content to be created or updated.
             
-      /// <param name="publish">Set to true to autopublish content.</param>
+ 
+
+
+
+        /// <param name="publish">Set to true to autopublish content.</param>
         /// <returns>InformationContentDto</returns>
         InformationContentDto CreateInformationContent (InformationDto body, bool? publish);
         /// <summary>
@@ -49,7 +53,11 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="body">The data of the content to be created or updated.
             
-       /// <param name="id">The id of the Information content.</param>
+ 
+
+
+
+        /// <param name="id">The id of the Information content.</param>
         /// <returns>InformationContentDto</returns>
         InformationContentDto PathInformationContent (InformationDto body, string id);
         /// <summary>
