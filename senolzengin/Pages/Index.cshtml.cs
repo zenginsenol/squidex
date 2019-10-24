@@ -7,49 +7,35 @@ using IO.Swagger.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
+using senolzengin.Repository;
 using Squidex.ClientLibrary;
 
 namespace senolzengin.Pages
 {
     public class IndexModel : PageModel
     {
-        public Item items;
+      
 
-        private readonly IConfiguration _configuration;
+        public List<ItemEducationsRepo.Item> ItemEducations { get; set; }
+        public ItemInformationRepo.Item ItemInformations { get; set; }
+        
+        private readonly ItemInformationRepo _informationRepo;
+       private readonly ItemEducationsRepo _educationRepo;
 
-        public IndexModel(IConfiguration configuration)
+        public IndexModel(ItemInformationRepo informationRepo, ItemEducationsRepo educationRepo)
         {
-            _configuration = configuration;
-        }
-
-        public class Item : SquidexEntityBase<_Item>
-        {
-        }
-
-        public class _Item
-        {
-            public string Name { get; set; }
-            public string Surname { get; set; }
-            public string Email { get; set; }
-            public string Telephone { get; set; }
-            public string HighSchool { get; set; }
-            public string University { get; set; }
-            public string Title { get; set; }
-            public string Department { get; set; }
-            public string Location { get; set; }
-            public string Experience { get; set; }
-            public string Age { get; set; }
-            public string Country { get; set; }
-            public string Summary { get; set; }
+            _informationRepo = informationRepo;
+            _educationRepo = educationRepo;
         }
 
         public async Task OnGet()
         {
-            var manager = SquidexClientManager.FromOption(_configuration.ToSquidexOptions());
-            var client = manager.GetClient<Item, _Item>("information");
-            var result = await client.GetAsync(context: SquidexParser.DefaultContext("tr"));
-            var res = result.Items.ToArray().FirstOrDefault();
-            items = res;
+            var resInformation = await  _informationRepo.GetItem();
+            var resEducation = await _educationRepo.GetItems();
+            ItemInformations = resInformation;
+            ItemEducations = resEducation;
         }
+
+        
     }
 }
