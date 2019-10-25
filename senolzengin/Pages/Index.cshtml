@@ -111,8 +111,8 @@
                 <div class="col-md-12 col-sm-12 text-center">
                     <div class="contents">
                         <h5 class="script-font wow fadeInUp" data-wow-delay="0.2s">Hi This is</h5>
-                        <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">@Model.ItemInformations.Data.Name &nbsp;@Model.ItemInformations.Data.Surname</h2>
-                        <p class="script-font wow fadeInUp" data-wow-delay="0.6s">@Model.ItemInformations.Data.Title</p>
+                        <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">@Model.ItemInformation.Data.Name &nbsp;@Model.ItemInformation.Data.Surname</h2>
+                        <p class="script-font wow fadeInUp" data-wow-delay="0.6s">@Model.ItemInformation.Data.Title</p>
                         <ul class="social-icon wow fadeInUp" data-wow-delay="0.8s">
                             <li>
                                 <a class="facebook" href="#">
@@ -167,25 +167,25 @@
                     <div class="about-profile">
                         <ul class="admin-profile">
                             <li>
-                                <span class="pro-title"> Name </span> <span class="pro-detail">@Model.ItemInformations.Data.Name</span>
+                                <span class="pro-title"> Name </span> <span class="pro-detail">@Model.ItemInformation.Data.Name</span>
                             </li>
                             <li>
-                                <span class="pro-title"> Age </span> <span class="pro-detail">@Model.ItemInformations.Data.Age</span>
+                                <span class="pro-title"> Age </span> <span class="pro-detail">@Model.ItemInformation.Data.Age</span>
                             </li>
                             <li>
-                                <span class="pro-title"> Experience </span> <span class="pro-detail">@Model.ItemInformations.Data.Experience</span>
+                                <span class="pro-title"> Experience </span> <span class="pro-detail">@Model.ItemInformation.Data.Experience</span>
                             </li>
                             <li>
-                                <span class="pro-title"> Country </span> <span class="pro-detail">@Model.ItemInformations.Data.Name</span>
+                                <span class="pro-title"> Country </span> <span class="pro-detail">@Model.ItemInformation.Data.Name</span>
                             </li>
                             <li>
-                                <span class="pro-title"> Location </span> <span class="pro-detail">@Model.ItemInformations.Data.Location</span>
+                                <span class="pro-title"> Location </span> <span class="pro-detail">@Model.ItemInformation.Data.Location</span>
                             </li>
                             <li>
-                                <span class="pro-title"> e-mail </span> <span class="pro-detail">@Model.ItemInformations.Data.Email</span>
+                                <span class="pro-title"> e-mail </span> <span class="pro-detail">@Model.ItemInformation.Data.Email</span>
                             </li>
                             <li>
-                                <span class="pro-title"> Phone </span> <span class="pro-detail">@Model.ItemInformations.Data.Telephone</span>
+                                <span class="pro-title"> Phone </span> <span class="pro-detail">@Model.ItemInformation.Data.Telephone</span>
                             </li>
                             <li>
                                 <span class="pro-title"> Freelance </span> <span class="pro-detail">Available</span>
@@ -254,9 +254,9 @@
                     </div>
                     <div class="services-content">
                         <h3>
-                            <a href="#">Analysist & Development</a>
+                            <a href="#">Analysist</a>
                         </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condi.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Suspendisse condi.</p>
                     </div>
                 </div>
             </div>
@@ -300,27 +300,17 @@
                             <i class="icon-briefcase"></i>
                             <h2 class="timelin-title">Experience</h2>
                         </li>
-                        <li>
-                            <div class="content-text">
-                                <h3 class="line-title">Art Director - Tesla Inc.</h3>
-                                <span>Jan 2018 - Present</span>
-                                <p class="line-text">Expenses as material breeding insisted building to in. Continual so distrusts pronounce by unwilling listening. Thing do taste on we manor.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="content-text">
-                                <h3 class="line-title">UX/UI Designer - Samsung</h3>
-                                <span>Nov 2016 - Dec 2017</span>
-                                <p class="line-text">Expenses as material breeding insisted building to in. Continual so distrusts pronounce by unwilling listening. Thing do taste on we manor.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="content-text">
-                                <h3 class="line-title">Intern UI Designer - UIdeck</h3>
-                                <span>Mar 2015 - Oct 2016</span>
-                                <p class="line-text">Expenses as material breeding insisted building to in. Continual so distrusts pronounce by unwilling listening. Thing do taste on we manor.</p>
-                            </div>
-                        </li>
+                        @foreach (var data in  Model.ItemExperience)
+                        {
+                            <li>
+                                <div class="content-text">
+                                    <h3 class="line-title">@data.Data.Title</h3>
+                                    <span>@data.Data.Date</span>
+                                    <p class="line-text">@data.Data.Description</p>
+                                    <p class="line-text">@data.Data.Technology</p>
+                                </div>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -340,14 +330,14 @@
                                 <div class="contact-icon">
                                     <i class="fa fa-map-marker"></i>
                                 </div>
-                                <p>@Model.ItemInformations.Data.Location</p>
+                                <p>@Model.ItemInformation.Data.Location</p>
                             </div>
                             <div class="single-contact">
                                 <div class="contact-icon">
                                     <i class="fa fa-envelope"></i>
                                 </div>
                                 <p>
-                                    <a href="mailto:@Model.ItemInformations.Data.Email">@Model.ItemInformations.Data.Email</a>
+                                    <a href="mailto:@Model.ItemInformation.Data.Email">@Model.ItemInformation.Data.Email</a>
                                 </p>
                                 @* <p><a href="mailto:tomsaulnier@gmail.com">tomsaulnier@gmail.com</a></p> *@
                             </div>
@@ -356,7 +346,7 @@
                                     <i class="fa fa-phone"></i>
                                 </div>
                                 <p>
-                                    <a href="#">@Model.ItemInformations.Data.Telephone</a>
+                                    <a href="#">@Model.ItemInformation.Data.Telephone</a>
                                 </p>
                                 @* <p><a href="#">+ (00) 123 344 789</a></p> *@
                             </div>

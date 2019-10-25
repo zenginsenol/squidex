@@ -17,23 +17,28 @@ namespace senolzengin.Pages
       
 
         public List<ItemEducationsRepo.Item> ItemEducations { get; set; }
-        public ItemInformationRepo.Item ItemInformations { get; set; }
+        public ItemInformationRepo.Item ItemInformation { get; set; }
+        public List<ItemExperienceRepo.Item> ItemExperience { get; set; }
         
         private readonly ItemInformationRepo _informationRepo;
        private readonly ItemEducationsRepo _educationRepo;
+       private readonly ItemExperienceRepo _experienceRepo;
 
-        public IndexModel(ItemInformationRepo informationRepo, ItemEducationsRepo educationRepo)
+        public IndexModel(ItemInformationRepo informationRepo, ItemEducationsRepo educationRepo, ItemExperienceRepo experienceRepo)
         {
             _informationRepo = informationRepo;
             _educationRepo = educationRepo;
+            _experienceRepo = experienceRepo;
         }
 
         public async Task OnGet()
         {
             var resInformation = await  _informationRepo.GetItem();
             var resEducation = await _educationRepo.GetItems();
-            ItemInformations = resInformation;
+            var resExperience = await _experienceRepo.GetItems();
+            ItemInformation = resInformation;
             ItemEducations = resEducation;
+            ItemExperience = resExperience;
         }
 
         
