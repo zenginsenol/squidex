@@ -35,6 +35,7 @@ namespace senolzengin.Repository
             public string Age { get; set; }
             public string Country { get; set; }
             public string Summary { get; set; }
+            public string PreWrite { get; set; }
         }
 
         public async Task<Item> GetItem()

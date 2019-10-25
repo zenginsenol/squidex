@@ -37,6 +37,7 @@ namespace senolzengin
             services.AddScoped<ItemInformationRepo>();
             services.AddScoped<ItemEducationsRepo>();
             services.AddScoped<ItemExperienceRepo>();
+            services.AddScoped<ItemItemWhatidoRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
